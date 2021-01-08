@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Average job age</title>
+</head>
+<body>
+    <h2>Average job age</h2>
+    <table border="2" cellpadding="5">
+        <tr>
+            <th>Job</th>
+            <th>Age</th>
+        </tr>
+        <tr th:each="job : ${averagejobage}">
+            <td th:text="${job.getKey()}"></td>
+            <td th:text="${job.getValue()}"></td>
+        </tr>
+    </table>
+</body>
+</html>

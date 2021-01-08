@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top 5 cities</title>
+</head>
+<body>
+    <h2>Top 5 cities</h2>
+    <table border="2" cellpadding="5">
+        <tr>
+            <th>City</th>
+            <th>Number of people</th>
+        </tr>
+        <tr th:each="city : ${top5city}">
+            <td th:text="${city.getKey()}"></td>
+            <td th:text="${city.getValue()}"></td>
+        </tr>
+    </table>
+</body>
+</html>

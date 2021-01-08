@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Money</title>
+</head>
+<body>
+    <h3>This is inside money converter</h3>
+    <form action="#" th:action="@{/money}" th:object="${moneyrequest}" method="post">
+        <select th:field="*{moneyCodeToChange}">
+            <option value="">--</option>
+            <option th:each="key: ${moneyconverter}"
+                    th:value="${key}"
+                    th:text="${key}"></option>
+        </select>
+        <input type="text" placeholder="Amount" th:field="*{moneyToChange}"/><br><br>
+        <select th:field="*{moneyCodeChanged}">
+            <option value="">--</option>
+            <option th:each="key: ${moneyconverter}"
+                    th:value="${key}"
+                    th:text="${key}"></option>
+        </select><br><br>
+        <button type="submit">Exchange money</button>
+    </form>
+    <br><br>
+    <div>
+        Đồng tiền được đổi: <strong th:text="${moneyrequest?.moneyCodeChanged}"></strong><br>
+        Số lượng: <strong th:text="${moneyresult?.moneyChanged}"></strong>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get All</title>
+</head>
+<body>
+    <h2>List all people</h2>
+    <table border="2" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>Full name</th>
+            <th>Gender</th>
+            <th>Job</th>
+            <th>City</th>
+            <th>Salary</th>
+            <th>Birthday</th>
+            <th>Age</th>
+        </tr>
+        <tr th:each="person : ${listpeople}">
+            <td th:text="${person.getId()}"></td>
+            <td th:text="${person.getFullname()}"></td>
+            <td th:text="${person.getGender()}"></td>
+            <td th:text="${person.getJob()}"></td>
+            <td th:text="${person.getCity()}"></td>
+            <td th:text="${person.getSalary()}"></td>
+            <td th:text="${person.getBirthdayString()}"></td>
+            <td th:text="${person.getAge()}"></td>
+        </tr>
+    </table>
+</body>
+</html>

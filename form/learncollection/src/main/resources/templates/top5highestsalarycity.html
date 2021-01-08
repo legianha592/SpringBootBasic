@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top 5 highest salary city</title>
+</head>
+<body>
+    <h2>Top 5 highest salary city</h2>
+    <table border="2" cellpadding="5">
+        <tr>
+            <th>City</th>
+            <th>Average salary</th>
+        </tr>
+        <tr th:each="city : ${top5highestsalarycity}">
+            <td th:text="${city.getKey()}"></td>
+            <td th:text="${city.getValue()}"></td>
+        </tr>
+    </table>
+</body>
+</html>

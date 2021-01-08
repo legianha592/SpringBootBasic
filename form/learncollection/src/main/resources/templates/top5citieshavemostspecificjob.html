@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top 5 cities have most specific job</title>
+</head>
+<body>
+    <h3>Top 5 cities have most specific job</h3>
+    <form action="#" th:action="@{/top5citieshavemostspecificjob}"
+          th:object="${top5citieshavemostspecificjob}" method="post">
+        <select th:field="*{job}">
+            <option value="">--</option>
+            <option th:each="key: ${alljob}"
+                    th:value="${key}"
+                    th:text="${key}"></option>
+        </select>
+        <br><br>
+        <button type="submit">Find list cities</button>
+    </form>
+    <br><br>
+    <div>
+        <h3>List cities</h3>
+        <table border="2" cellpadding="5">
+            <tr>
+                <th>City</th>
+                <th>Number of people</th>
+            </tr>
+            <tr th:each="city : ${response}">
+                <td th:text="${city?.getKey()}"></td>
+                <td th:text="${city?.getValue()}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
